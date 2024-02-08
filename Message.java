@@ -26,7 +26,13 @@ public class Message {
 		super();
 	}
 
-	
+	public Message(int employeeId, String employeeName, String employeeEmail, String employeeMessage) {
+		super();
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.employeeEmail = employeeEmail;
+		this.employeeMessage = employeeMessage;
+	}
 
 	public long getEmployeeId() {
 		return employeeId;
@@ -60,6 +66,10 @@ public class Message {
 		this.employeeMessage = employeeMessage;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Message [employeeId=" + employeeId + ", employeeName=" + employeeName + ", employeeEmail="
+				+ employeeEmail + ", employeeMessage=" + employeeMessage + "]";
+	}
 	
 }
