@@ -1,13 +1,11 @@
 package com.abp.bean;
 
-import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -34,10 +32,7 @@ public class Users {
 	@Column(name="User_Type")
 	private String userType;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="User_Id",referencedColumnName="id")
-	private Employee emp;
-	
+
 	
 	public Users() {
 		super();
@@ -114,11 +109,4 @@ public class Users {
 		return "Users [userId=" + userId + ", userName=" + userName + ", userEmail=" + userEmail + ", userPassword="
 				+ userPassword + ", userConfirmPassword=" + userConfirmPassword + ", userType=" + userType + "]";
 	}
-
-
-
-  
-	
-	
-
 }
