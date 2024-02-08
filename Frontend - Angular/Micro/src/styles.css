@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@media(min-width: 1025px) {
+    .hide-desktop {
+        width:0!important;
+        height: 0!important;
+        padding: 0!important;
+        visibility: hidden!important;
+        margin: 0!important;
+        display: table-column!important;
+        background: 0!important
+    }
+}
+
+@media(min-width: 769px) and (max-width:1024px) {
+    .hide-tablet_landscape {
+        width:0!important;
+        height: 0!important;
+        padding: 0!important;
+        visibility: hidden!important;
+        margin: 0!important;
+        display: table-column!important;
+        background: 0!important
+    }
+}
+
+@media(min-width: 481px) and (max-width:768px) {
+    .hide-tablet {
+        width:0!important;
+        height: 0!important;
+        padding: 0!important;
+        visibility: hidden!important;
+        margin: 0!important;
+        display: table-column!important;
+        background: 0!important
+    }
+}
+
+@media(max-width: 480px) {
+    .hide-mobile {
+        width:0!important;
+        height: 0!important;
+        padding: 0!important;
+        visibility: hidden!important;
+        margin: 0!important;
+        display: table-column!important;
+        background: 0!important
+    }
+}
+
+@media(max-width: 480px) {
+    .themify_map.tf_map_loaded {
+        width:100%!important
+    }
+
+    .ui.builder_button,.ui.nav li a {
+        padding: .525em 1.15em
+    }
+
+    .fullheight>.row_inner:not(.tb_col_count_1) {
+        min-height: 0
+    }
+}

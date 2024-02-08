@@ -1,0 +1,13 @@
+.card{
+  border:none;
+ }
+ .card:hover{
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.3);
+  border-color: navy;
+
+ } .container2 {
+  padding: 2px 16px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
