@@ -1,0 +1,82 @@
+import { Component, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { MessageadminComponent } from '../messageadmin/messageadmin.component';
+import { MsgservService } from '../msgserv.service';
+import { SnackbarService } from '../snackbar.service';
+import { UserService } from '../user.service';
+import { AdmindialogComponent } from '../admindialog/admindialog.component';
+import { DoctorService } from '../doctor.service';
+
+@Component({
+  selector: 'app-manageuser',
+  templateUrl: './manageuser.component.html',
+  styleUrls: ['./manageuser.component.css']
+})
+export class ManageuserComponent {
+
+  onSubmit() {
+    throw new Error('Method not implemented.');
+    }
+displayedColumns = ['name','email','phone','role','actions'];
+    
+    dataSource! :  MatTableDataSource<any>;
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+    @ViewChild(MatSort) sort!: MatSort;
+
+  
+  // displayedColumns: string[] = ['userId',,'userName','userEmail', 'userPassword', 'userConfirmPassword', 'action'];
+  // dataSource!: MatTableDataSource<any>
+  // @ViewChild(MatPaginator) paginator! : MatPaginator;
+  // @ViewChild(MatSort) sort! : MatSort;
+
+
+  constructor(private _mov:UserService,  private _dialog:MatDialog, private _snackbar: SnackbarService){}
+
+  ngOnInit(): void {
+      this.getEmp(); //To get the values
+  }
+
+  getEmp(){
+    this._mov.getAlldetails().subscribe({
+      next: (res) => {
+        this.dataSource = new MatTableDataSource(res);
+      }
+    });
+  }
+
+  // deleteEmployee(userId:number){
+  //   this._mov.delete(userId).subscribe({
+  //     next: () => {
+  //       this._snackbar.openSnackBar("Record Deleted", "Done"); //Delete Doctor
+  //       this.getEmp();
+  //     }
+  //   });
+  // }
+
+  // editEmp(data:any){
+  //   const dialogRef = this._dialog.open(AdmindialogComponent,{
+  //     data,
+  //   });
+  //   dialogRef.afterClosed().subscribe({
+  //     next: (val) => {
+  //       if(val){
+  //         this.getEmp();
+  //       }
+  //     },
+  //     error: console.log
+  //   });
+  // }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+}

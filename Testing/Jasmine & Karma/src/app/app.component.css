@@ -1,0 +1,45 @@
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+.navbar-expand-sm{
+    background-color: navy;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height:10%;
+}
+.container-fluid a{
+    color:white;
+    font-size: xx-larger;
+}
+ /* home content css */
+
+.container-fluid .footerSection{
+    height: 50%;
+    background-color:rgb(7, 7, 94);
+    margin:0cap;
+    max-width: 100%;
+  }
+  .homecontent2{
+    height: 75%;  
+    padding-top: 1%;
+    
+    /* font-style: italic; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .card{
+    border: none;
+  }
+  td:hover{
+    border: 2px;
+    border-color: navy;
+  }
+  h1{
+    font-size: xx-large;
+    padding-top: 1%;
+    font-weight: bolder;
+    /* font-style: italic; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif}
+  
