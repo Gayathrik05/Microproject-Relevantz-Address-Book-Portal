@@ -1,0 +1,129 @@
+.space{
+    flex: 1 1 auto;
+  }
+  /*
+  .table-container{
+    padding-top: 20px;
+    margin: 0 auto;
+  
+  
+    max-width: 1248px;
+   
+    mat-form-field{
+        width: 100%;
+    }
+  }
+  */
+  
+  
+  /*  .example-spacer {
+    flex: 1 1 auto;
+  } */
+  table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .navbar-expand-sm{
+    background-color: navy;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height:10%;
+  }
+  .container-fluid a{
+    color:white;
+    font-size: xx-larger;
+  }
+  /* home content css */
+  
+  .container-fluid .footerSection{
+    height: 50%;
+    background-color:rgb(7, 7, 94);
+    margin:0cap;
+    max-width: 100%;
+  }
+  .homecontent2{
+    height: 75%;  
+    padding-top: 1%;
+    
+    /* font-style: italic; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .card{
+    border: none;
+  }
+  td:hover{
+    border: 2px;
+    border-color: navy;
+  }
+  h1{
+    font-size: xx-large;
+    padding-top: 1%;
+    font-weight: bolder;
+    /* font-style: italic; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif}
+  
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.1;
+      width: 60%;
+    }
+    
+    .card:hover {
+      box-shadow: 0 10px 10px 0 rgba(0,0,0,0.3);
+      border-color: navy;
+      /* border:1px dotted; */
+    }
+    
+    .container2 {
+      padding: 2px 16px;
+    }
+   
+  
+    /* responsive */
+    
+  @media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  }
+  

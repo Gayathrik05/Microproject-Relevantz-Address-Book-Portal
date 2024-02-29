@@ -1,0 +1,130 @@
+<body>
+    <div matDialogTitle>
+        <h1 style="color:rgb(53, 7, 234)">Raise a Message</h1>
+    </div>
+    
+    <form [formGroup]="MessageForm"  id="MessageForm" (ngSubmit) = "onSubmit()" id="MessageForm">
+        <div class="content">
+            <mat-dialog-content>
+                <div class="example-container">
+                    <table>
+                        <tr> <th>
+                            <!-- User ID -->
+                            <mat-form-field appearance="outline">
+                                <mat-label>ID</mat-label>
+                                <input type="text" matInput  formControlName="employeeId" name="employeeId" width="80%">
+                            </mat-form-field>
+                        </th>&nbsp;&nbsp;&nbsp;
+                         <th> <!-- Name -->
+                            <mat-form-field appearance="outline">
+                                <mat-label>Name</mat-label>
+                                <input type="text" matInput  formControlName="employeeName" name="employeeName" width="80%">
+                            </mat-form-field></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div *ngIf="MessageForm.get('employeeId')!.touched && MessageForm.get('employeeId')!.invalid">
+                                    <div *ngIf="MessageForm.get('employeeId')!.hasError('required')">
+                                        <font color="red">ID required*</font>
+                                    </div>
+                                    <div *ngIf="MessageForm.get('employeeId')!.hasError('pattern')">
+                                        <font color="red">Invalid Format*</font>
+                                    </div>
+                                </div>
+                                <div *ngIf="MessageForm.get('employeeId')?.untouched && MessageForm.get('employeeId')?.valid &&
+                                    MessageForm.get('employeeId')?.hasValidator && MessageForm.get('employeeId')?.hasAsyncValidator">
+                                        <font color="green"><b>Valid ID</b></font>                                   
+                                </div>
+                                
+                            </td>&nbsp;&nbsp;&nbsp;
+                        
+                            <td>
+                                <div *ngIf="MessageForm.get('employeeName')!.touched && MessageForm.get('employeeName')!.invalid">
+                                    <div *ngIf="MessageForm.get('employeeName')!.hasError('required')">
+                                        <font color="red">Name required*</font>
+                                    </div>
+                                    <div *ngIf="MessageForm.get('employeeName')!.hasError('pattern')">
+                                        <font color="red">Invalid Format*</font>
+                                    </div>
+                                </div>
+                                <div *ngIf="MessageForm.get('employeeName')?.untouched && MessageForm.get('employeeName')?.valid &&
+                                    MessageForm.get('employeeName')?.hasValidator && MessageForm.get('employeeName')?.hasAsyncValidator">
+                                        <font color="green"><b>Valid Name</b></font>                                   
+                                </div>
+                                
+                            </td>
+                        </tr>
+
+                                <tr><th>
+                                    <!-- User Name -->
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Email ID</mat-label>
+                                        <input type="text" matInput  formControlName="employeeEmail"   name="employeeEmail" width="80%">
+                                    </mat-form-field>
+                                </th>&nbsp;&nbsp;&nbsp;
+                                 <th> <!-- Password -->
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Message</mat-label>
+                                        <input type="text" matInput  formControlName="employeeMessage"   name="employeeMessage" width="80%">
+                                    </mat-form-field></th></tr>
+                                    <tr>
+                                        <td>
+                                            <div *ngIf="MessageForm.get('employeeEmail')!.touched && MessageForm.get('employeeEmail')!.invalid">
+                                                <div *ngIf="MessageForm.get('employeeEmail')!.hasError('required')">
+                                                    <font color="red">Email required*</font>
+                                                </div>
+                                                <div *ngIf="MessageForm.get('employeeEmail')!.hasError('pattern')">
+                                                    <font color="red">Invalid Format*</font>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="MessageForm.get('employeeEmail')?.untouched && MessageForm.get('employeeEmail')?.valid &&
+                                                MessageForm.get('employeeEmail')?.hasValidator && MessageForm.get('employeeEmail')?.hasAsyncValidator">
+                                                    <font color="green"><b>Valid ID</b></font>                                   
+                                            </div>
+                                            
+                                        </td>&nbsp;&nbsp;&nbsp;
+                                    
+                                        <td>
+                                            <div *ngIf="MessageForm.get('employeeMessage')!.touched && MessageForm.get('employeeMessage')!.invalid">
+                                                <div *ngIf="MessageForm.get('employeeMessage')!.hasError('required')">
+                                                    <font color="red">Message required*</font>
+                                                </div>
+                                                <div *ngIf="MessageForm.get('employeeMessage')!.hasError('pattern')">
+                                                    <font color="red">Invalid Format*</font>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="MessageForm.get('employeeMessage')?.untouched && MessageForm.get('employeeMessage')?.valid &&
+                                                MessageForm.get('employeeMessage')?.hasValidator && MessageForm.get('employeeMessage')?.hasAsyncValidator">
+                                                    <font color="green"><b>Valid </b></font>                                   
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+
+                       
+                    </table>
+    
+    
+    
+                </div>
+    
+    
+            </mat-dialog-content>
+    
+            <div class="action">
+                <mat-dialog-actions style="justify-content: end;">
+                    <!-- Cancel -->
+                    <button mat-raised-button type="button" [matDialogClose]="false">Cancel</button>&nbsp;&nbsp;
+    
+                    <!-- Submit -->
+                    <!-- <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button> -->
+                     <button name="insert" mat-raised-button type="submit" color="primary">{{data ? 'Update':'Save'}}</button>  
+                        <!-- <a routerLink="admin"><button name="insert" mat-raised-button type="submit" color="primary">Login</button></a> -->
+                </mat-dialog-actions>
+            </div>
+        </div>
+    </form>
+    </body>
+    

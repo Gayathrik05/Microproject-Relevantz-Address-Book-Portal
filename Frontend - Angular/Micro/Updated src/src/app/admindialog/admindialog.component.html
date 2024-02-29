@@ -1,0 +1,201 @@
+<body>
+    <div matDialogTitle>
+        <h1 style="color:rgb(53, 7, 234)">Add New Employee</h1>
+    </div>
+    
+    <form [formGroup]="EmployeeForm"  id="EmployeeForm" (ngSubmit) = "onSubmit()" id="EmployeeForm">
+        <div class="content">
+            <mat-dialog-content>
+                <div class="example-container">
+                    <table>
+                        <tr> <th>
+                            <!-- User ID -->
+                            <mat-form-field appearance="outline">
+                                <mat-label>ID</mat-label>
+                                <input type="text" matInput  formControlName="empId" name="empId" width="80%">
+                            </mat-form-field>
+                        </th>&nbsp;&nbsp;&nbsp;
+                         <th> <!-- Name -->
+                            <mat-form-field appearance="outline">
+                                <mat-label>Name</mat-label>
+                                <input type="text" matInput  formControlName="empName" name="empName" width="80%">
+                            </mat-form-field></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div *ngIf="EmployeeForm.get('empId')!.touched && EmployeeForm.get('empId')!.invalid">
+                                    <div *ngIf="EmployeeForm.get('empId')!.hasError('required')">
+                                        <font color="red">ID required*</font>
+                                    </div>
+                                    <div *ngIf="EmployeeForm.get('empId')!.hasError('pattern')">
+                                        <font color="red">Invalid Format*</font>
+                                    </div>
+                                </div>
+                                <div *ngIf="EmployeeForm.get('empId')?.untouched && EmployeeForm.get('empId')?.valid &&
+                                    EmployeeForm.get('empId')?.hasValidator && EmployeeForm.get('empId')?.hasAsyncValidator">
+                                        <font color="green"><b>Valid ID</b></font>                                   
+                                </div>
+                                
+                            </td>&nbsp;&nbsp;&nbsp;
+                        
+                            <td>
+                                <div *ngIf="EmployeeForm.get('empName')!.touched && EmployeeForm.get('empName')!.invalid">
+                                    <div *ngIf="EmployeeForm.get('empName')!.hasError('required')">
+                                        <font color="red">Name required*</font>
+                                    </div>
+                                    <div *ngIf="EmployeeForm.get('empName')!.hasError('pattern')">
+                                        <font color="red">Invalid Format*</font>
+                                    </div>
+                                </div>
+                                <div *ngIf="EmployeeForm.get('empName')?.untouched && EmployeeForm.get('empName')?.valid &&
+                                    EmployeeForm.get('empName')?.hasValidator && EmployeeForm.get('empName')?.hasAsyncValidator">
+                                        <font color="green"><b>Valid Name</b></font>                                   
+                                </div>
+                                
+                            </td>
+                        </tr>
+
+                            <tr><th>
+                                <!-- User phone -->
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Phone Number</mat-label>
+                                    <input type="text" matInput  formControlName="empPhone"    name="empPhone" width="80%">
+                                </mat-form-field>
+                            </th>&nbsp;&nbsp;&nbsp;
+                             <th> <!-- Password -->
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Location</mat-label>
+                                    <input type="text" matInput  formControlName="empLocation"    name="empLocation" width="80%">
+                                </mat-form-field></th></tr>
+                                <tr>
+                                    <td>
+                                        <div *ngIf="EmployeeForm.get('empPhone')!.touched && EmployeeForm.get('empPhone')!.invalid">
+                                            <div *ngIf="EmployeeForm.get('empPhone')!.hasError('required')">
+                                                <font color="red">Phone Number required*</font>
+                                            </div>
+                                            <div *ngIf="EmployeeForm.get('empPhone')!.hasError('pattern')">
+                                                <font color="red">Invalid Format*</font>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="EmployeeForm.get('empPhone')?.untouched && EmployeeForm.get('empPhone')?.valid &&
+                                            EmployeeForm.get('empPhone')?.hasValidator && EmployeeForm.get('empPhone')?.hasAsyncValidator">
+                                                <font color="green"><b>Valid Number</b></font>                                   
+                                        </div>
+                                        
+                                    </td>&nbsp;&nbsp;&nbsp;
+                                
+                                    <td>
+                                        <div *ngIf="EmployeeForm.get('empLocation')!.touched && EmployeeForm.get('empLocation')!.invalid">
+                                            <div *ngIf="EmployeeForm.get('empLocation')!.hasError('required')">
+                                                <font color="red">Location required*</font>
+                                            </div>
+                                            <div *ngIf="EmployeeForm.get('empLocation')!.hasError('pattern')">
+                                                <font color="red">Invalid Format*</font>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="EmployeeForm.get('empLocation')?.untouched && EmployeeForm.get('empLocation')?.valid &&
+                                            EmployeeForm.get('empLocation')?.hasValidator && EmployeeForm.get('empLocation')?.hasAsyncValidator">
+                                                <font color="green"><b>Valid </b></font>                                   
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+                                <tr><th>
+                                    <!-- User Name -->
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Blood Group</mat-label>
+                                        <input type="text" matInput  formControlName="empBg"   name="empBg" width="80%">
+                                    </mat-form-field>
+                                </th>&nbsp;&nbsp;&nbsp;
+                                 <th> <!-- Password -->
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Joining Date</mat-label>
+                                        <input type="text" matInput  formControlName="joiningDate"   name="joiningDate" width="80%">
+                                    </mat-form-field></th></tr>
+                                    <tr>
+                                        <td>
+                                            <div *ngIf="EmployeeForm.get('empBg')!.touched && EmployeeForm.get('empBg')!.invalid">
+                                                <div *ngIf="EmployeeForm.get('empBg')!.hasError('required')">
+                                                    <font color="red">Blood Group required*</font>
+                                                </div>
+                                                <div *ngIf="EmployeeForm.get('empBg')!.hasError('pattern')">
+                                                    <font color="red">Invalid Format*</font>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="EmployeeForm.get('empBg')?.untouched && EmployeeForm.get('empBg')?.valid &&
+                                                EmployeeForm.get('empBg')?.hasValidator && EmployeeForm.get('empBg')?.hasAsyncValidator">
+                                                    <font color="green"><b>Valid ID</b></font>                                   
+                                            </div>
+                                            
+                                        </td>&nbsp;&nbsp;&nbsp;
+                                    
+                                        <td>
+                                            <div *ngIf="EmployeeForm.get('joiningDate')!.touched && EmployeeForm.get('joiningDate')!.invalid">
+                                                <div *ngIf="EmployeeForm.get('joiningDate')!.hasError('required')">
+                                                    <font color="red">Date required*</font>
+                                                </div>
+                                                <div *ngIf="EmployeeForm.get('joiningDate')!.hasError('pattern')">
+                                                    <font color="red">Invalid Format*</font>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="EmployeeForm.get('joiningDate')?.untouched && EmployeeForm.get('joiningDate')?.valid &&
+                                                EmployeeForm.get('joiningDate')?.hasValidator && EmployeeForm.get('joiningDate')?.hasAsyncValidator">
+                                                    <font color="green"><b>Valid </b></font>                                   
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+
+                                    <tr> <th> <!-- Password -->
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Job Title</mat-label>
+                                            <input type="text" matInput  formControlName="jobTitle"   name="jobTitle" width="80%">
+                                        </mat-form-field></th></tr>
+                     
+                            <tr>
+                      
+                        
+                    
+                <td colspan="2" align="center">
+                    <div *ngIf="EmployeeForm.get('jobTitle')!.touched && EmployeeForm.get('jobTitle')!.invalid">
+                        <div *ngIf="EmployeeForm.get('jobTitle')!.hasError('required')">
+                            <font color="red">Job Role required*</font>
+                        </div>
+                        <div *ngIf="EmployeeForm.get('jobTitle')!.hasError('pattern')">
+                            <font color="red">Invalid Format*</font>
+                        </div>
+                    </div>
+                    <div *ngIf="EmployeeForm.get('jobTitle')?.untouched && EmployeeForm.get('jobTitle')?.valid &&
+                        EmployeeForm.get('jobTitle')?.hasValidator && EmployeeForm.get('jobTitle')?.hasAsyncValidator">
+                            <font color="green"><b>Valid</b></font>                                   
+                    </div>
+                    
+                </td>
+            </tr>
+                       
+                    </table>
+    
+    
+    
+                </div>
+    
+    
+            </mat-dialog-content>
+    
+            <div class="action">
+                <mat-dialog-actions style="justify-content: end;">
+                    <!-- Cancel -->
+                    <button mat-raised-button type="button" [matDialogClose]="false">Cancel</button>&nbsp;&nbsp;
+    
+                    <!-- Submit -->
+                    <!-- <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button> -->
+                     <button name="insert" mat-raised-button type="submit" color="primary">{{data ? 'Update':'Save'}}</button>  
+                        <!-- <a routerLink="admin"><button name="insert" mat-raised-button type="submit" color="primary">Login</button></a> -->
+                </mat-dialog-actions>
+            </div>
+        </div>
+    </form>
+    </body>
+    
